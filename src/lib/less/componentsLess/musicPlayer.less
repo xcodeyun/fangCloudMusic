@@ -1,0 +1,173 @@
+@rate: 50;
+#musicPlayer{
+  height: 100%;
+  padding: 0 6rem / @rate;
+  position: relative;
+  .box{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 6rem / @rate;
+    .musicImg{
+        width: 45rem / @rate;
+        height: 45rem / @rate;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #fff;
+        animation: imgRotate 12s linear infinite;
+        animation-play-state: paused;
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .musicActive{
+        animation-play-state: running;
+    }
+    .info{
+        flex: 1;
+        height: 45rem / @rate;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        padding: 4rem / @rate 0;
+        margin: 0 6rem / @rate;
+        .title{
+            position: relative;
+            font-size: 14rem / @rate;
+            white-space: nowrap;
+            color: #FFF;
+            font-size: 500;
+        }
+        .singer{
+            position: relative;
+            font-size: 12rem / @rate;
+            white-space: nowrap;
+            color: #e6dcdd;
+        }
+        .animateT{
+            animation: moveT 12s linear infinite;
+        }
+        .animateS{
+            animation: moveS 12s linear infinite;
+        }
+    }
+    .playBtn{
+        width: 30rem / @rate;
+        height: 30rem / @rate;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1rem / @rate solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 6rem / @rate;
+        img{
+            display: block;
+            width: 50%;
+            height: 50%;
+            object-position: center center;
+            object-fit: cover;
+        }
+    }
+    .stopBtn{
+        border: 1rem / @rate solid #FFFFFF;
+    }
+    .playList{
+        width: 30rem / @rate;
+        height: 30rem / @rate;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 6rem / @rate;
+        img{
+            display: block;
+            width: 75%;
+            height: 75%;
+            object-position: center center;
+            object-fit: cover;
+        }
+    }
+    .Bpopup{
+        position: absolute;
+        bottom: 100%;
+        right: 10rem / @rate;
+        width: 200rem / @rate;
+        height: 300rem / @rate;
+        border-radius: 8rem / @rate;
+        box-shadow: 0 0 12rem / @rate 0 #9999993f;
+        .title{
+            font-size: 18rem / @rate;
+            font-weight: bold;
+            padding: 10rem / @rate 12rem / @rate;
+            border-radius: 8rem / @rate 8rem / @rate 0 0;
+            background-color: rgb(255, 223, 228, 0.6);
+        }
+        .musicList{
+            width: 100%;
+            height: calc(100% - 36rem / @rate - 12rem / @rate);
+            border-radius: 0 0 8rem / @rate 8rem / @rate;
+            overflow-y: auto;
+            background-color: rgba(255, 192, 203, 0.6);
+            .musicItem{
+                font-size: 14rem / @rate;
+                padding: 10rem / @rate 12rem / @rate;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+  }
+}
+.audio{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.range{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2rem / @rate;
+    background-color: rgb(255, 223, 228);
+}
+// 动画开始
+@keyframes moveT{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-290%);
+    }
+}
+@keyframes moveS{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-280%);
+    }
+}
+@keyframes imgRotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+// 动画结束
+
+// 推荐列表popup开始
+.Bpopup-enter, .Bpopup-leave-to{
+    opacity: 0;
+}
+.Bpopup-enter-active, .Bpopup-leave-active{
+    transition: opacity 0.3s ease;
+}
+// 推荐列表popup结束

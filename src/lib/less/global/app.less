@@ -1,0 +1,79 @@
+// 参数rate为手动转化rem的比值单位, 公式为 (期望的px值 / @rate) 得出在Ipone6基准下转化后的对应px的rem值
+@rate: 50;
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-style: normal;
+    outline: none;
+    border: none;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden!important;
+}
+#app{
+    height: 100%;
+    width: 100%;
+    overflow: hidden!important;
+    position: relative;
+}
+#main{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10;
+    overflow: hidden!important;
+    background-color: transparent;
+}
+#header{
+    height: 48rem / @rate;
+    position: fixed;
+    width: 100%;
+    top: 0;left: 0;
+    overflow: hidden!important;
+    background-color: rgba(255, 192, 203, 0.6);
+}
+#player{
+    height: 55rem / @rate;
+    width: 100%;
+    position: fixed;
+    bottom: 0;left: 0;
+    background-color: rgba(255, 192, 203, 0.6);
+}
+#bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden!important;
+    img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        opacity: 0.9;
+        filter: blur(2px);
+    }
+}
+#page{
+    overflow: hidden!important;
+    height: 100%;
+    padding: 48rem / @rate 0 55rem / @rate 0;
+}
+.RouterActive{
+    transform: scale(1.3);
+}
+
+// mintui组件全局样式
+.mint-swipe-indicators {
+    font-size: 0;
+}

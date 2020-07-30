@@ -1,0 +1,136 @@
+@rate: 50;
+// 页面样式
+#faxian{
+    height: 100%;
+    overflow-y: auto;
+    padding: 14rem / @rate 0;
+}
+// 轮播区域
+.swiperArea{
+    width: 340rem / @rate;
+    height: 120rem / @rate;
+    overflow: hidden;
+    border-radius: 10rem / @rate;
+    margin: 0 auto 16rem / @rate auto;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+// 次标题
+.subheading{
+    height: 100rem / @rate;
+    display: flex;
+    align-items: center;
+    .subheadingItem{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        .title{
+            font-size: 12rem / @rate;
+            margin-top: 8rem / @rate;
+            color: #fff;
+            text-shadow: 0 0 3rem / @rate #505050;
+        }
+        .icon{
+            width: 50rem / @rate;
+            height: 50rem / @rate;
+            border-radius: 50%;
+            overflow: hidden;
+            background-image: linear-gradient(45deg, #f0e0ea, #f0e1e8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                display: block;
+                width: 66%;
+                height: 66%;
+            }
+        }
+        &:nth-child(1) .icon img{
+            width: 50%;
+            height: 50%;
+        }
+        &:nth-child(2) .icon img{
+            width: 50%;
+            height: 50%;
+        }
+        &:nth-child(3) .icon img{
+            width: 50%;
+            height: 50%;
+        }
+    }
+}
+
+// 标题处理
+.songListArea, .jinquArea, .singerArea, .tuijianArea{
+    margin-bottom: 12rem / @rate;
+    width: 375rem / @rate;
+    .title{
+        height: 33rem / @rate;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10rem / @rate;
+        padding: 0 16rem / @rate;
+        .title_left{
+            font-size: 18rem / @rate;
+            font-weight: bold;
+            color: #FFF;
+        }
+        .title_right{
+            font-size: 12rem / @rate;
+            padding: 3rem / @rate 6rem / @rate;
+            border: 1rem / @rate solid #FFF;
+            border-radius: 18rem / @rate;
+            color: #FFF;
+            text-shadow: 0 0 3rem / @rate #505050;
+        }
+    }
+}
+
+// 发现好歌单
+.songListArea{
+    .songList{
+        height: 170rem / @rate;
+        font-size: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        li{
+            display: inline-block;
+            height: 160rem / @rate;
+            width: 120rem / @rate;
+            margin-right: 8rem / @rate;
+            &:first-child{margin-left: 16rem / @rate;}
+            &:last-child{margin-right: 16rem / @rate;}
+        }
+    }
+}
+
+// 新歌列表
+.jinquArea, .tuijianArea{
+    .xinge, .tuijian{
+        height: 180rem / @rate;
+        padding: 0 16rem / @rate;
+    }
+}
+
+// 热门歌手
+.singerArea{
+    .singerList{
+        height: 170rem / @rate;
+        font-size: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        li{
+            display: inline-block;
+            height: 100%;
+            width: 120rem / @rate;
+            border-radius: 10rem / @rate;
+            overflow: hidden;
+            margin-right: 8rem / @rate;
+            &:first-child{margin-left: 16rem / @rate;}
+            &:last-child{margin-right: 16rem / @rate;}
+        }
+    }
+}
