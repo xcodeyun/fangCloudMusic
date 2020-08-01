@@ -9,6 +9,8 @@
     font-style: normal;
     outline: none;
     border: none;
+    font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif;
+    user-select: none;
 }
 html,body{
     height: 100%;
@@ -37,14 +39,13 @@ html,body{
     width: 100%;
     top: 0;left: 0;
     overflow: hidden!important;
-    background-color: rgba(255, 192, 203, 0.6);
 }
 #player{
     height: 55rem / @rate;
     width: 100%;
     position: fixed;
     bottom: 0;left: 0;
-    background-color: rgba(255, 192, 203, 0.6);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 #bg{
     position: absolute;
@@ -64,11 +65,25 @@ html,body{
         filter: blur(2px);
     }
 }
+#mask{
+    height: 48rem / @rate;
+    background-color: transparent;
+}
 #page{
     overflow: hidden!important;
-    height: 100%;
-    padding: 48rem / @rate 0 55rem / @rate 0;
+    height: calc(100% - 48rem / @rate - 55rem / @rate);
+    position: relative;
 }
+
+// 路由页面切换动画
+.routerTRS-enter, .routerTRS-leave-to{
+    opacity: 0;
+}
+.routerTRS-enter-active, .routerTRS-leave-active{
+    transition: opacity 0.2s ease;
+}
+
+// 路由高亮类
 .RouterActive{
     transform: scale(1.3);
 }

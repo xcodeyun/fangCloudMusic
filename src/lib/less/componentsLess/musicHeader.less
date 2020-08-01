@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 6rem / @rate;
+  position: relative;
 }
 .menu, .search{
   width: 48rem / @rate;
@@ -17,22 +18,45 @@
   }
 }
 .menu{
-    height: 30rem / @rate;
+    height: 25rem / @rate;
+    position: relative;
+    z-index: 10;
 }
 .search{
     height: 20rem / @rate;
+    position: relative;
+    z-index: 10;
 }
 .linkBtnList{
     flex: 1;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 10;
     .linkBtnItem{
         flex: 1;
         text-align: center;
         color: #fff;
+        text-shadow: 0 0 3rem / @rate #505050;
         font-weight: 600;
         font-size: 14rem / @rate;
         transform-origin: center 12rem / @rate;
         transition: transform 0.3s ease;
+    }
+}
+.headerBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    img{
+        display: block;
+        width: 375rem / @rate;
+        height: 667rem / @rate;
+        object-position: center top;
+        object-fit: cover;
+        filter: blur(16rem / @rate);
     }
 }

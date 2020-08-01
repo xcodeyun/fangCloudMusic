@@ -1,5 +1,9 @@
 <template>
   <div id="musicHeader">
+    <div class="headerBg">
+      <img src="./../assets/bg/bg.jpg" alt v-if="!hasLogin" />
+      <img :src="userInfo ? userInfo.backgroundUrl : ''" alt v-else />
+    </div>
     <div class="menu" @click="tagglePopup">
       <img src="./../assets/icon/_menu.png" />
     </div>
@@ -30,7 +34,14 @@ export default {
   },
   created() {},
   mounted() {},
-  computed: {},
+  computed: {
+    hasLogin() {
+      return this.$store.state.hasLogin;
+    },
+    userInfo() {
+      return this.$store.state.userInfo;
+    },
+  },
   filters: {},
   components: {},
   watch: {

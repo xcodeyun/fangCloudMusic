@@ -1,0 +1,228 @@
+@rate: 50;
+// 页面样式
+#wode{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.header{
+    padding: 0 10rem /@rate;
+    .top{
+        display: flex;
+        align-items: center;
+        height: 120rem / @rate;
+        padding: 0 14rem / @rate;
+        .userImg{
+            width: 60rem / @rate;
+            height: 60rem / @rate;
+            border-radius: 50%;
+            background-color: #d2d2d2;
+            overflow: hidden;
+            .hasLoginImg{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center bottom;
+            }
+            .noLoginImg{
+                width: 100%;
+                height: 100%;
+                transform: translateY(10rem / @rate);
+                object-fit: contain;
+                object-position: center bottom;
+            }
+        }
+        .userName{
+            flex: 1;
+            padding: 0 12rem / @rate;
+            font-size: 16rem / @rate;
+            letter-spacing: 1rem / @rate;
+            color: #fff;
+            text-shadow: 0 0 5rem / @rate #505050;
+        }
+        .loginBtn{
+            padding: 3rem / @rate 8rem / @rate;
+            border: 1rem / @rate solid #fff;
+            font-size: 12rem / @rate;
+            border-radius: 18rem / @rate;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 3rem / @rate #505050;
+        }
+    }
+    .bottom{
+        height: 55rem / @rate;
+        display: flex;
+        align-items: center;
+        .bottomItem{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:nth-child(1){
+                .img{
+                    img{
+                        width: 30rem / @rate;
+                        height: 30rem / @rate;
+                    }
+                }
+            }
+            .img{
+                width: 35rem / @rate;
+                height: 35rem / @rate;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    display: block;
+                    width: 25rem / @rate;
+                    height: 25rem / @rate;
+                    object-fit: cover;
+                }
+            }
+            .info{
+                font-size: 12rem / @rate;
+                text-align: center;
+                color: #FFF;
+                text-shadow: 0 0 3rem / @rate #505050;
+            }
+        }
+    }
+}
+.noLogin{
+    margin-top: 30vh;
+    color: #FFF;
+    text-align: center;
+    font-size: 13rem / @rate;
+    text-shadow: 0 0 3rem / @rate #505050;
+}
+.main{
+    margin-top: 18rem / @rate;
+    padding: 0 16rem / @rate;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 12rem / @rate 12rem / @rate 0 0;
+    padding-bottom: 14rem / @rate;
+    .wodeTitle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 38rem / @rate;
+        .left{
+            font-size: 16rem / @rate;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 3rem / @rate #505050;
+        }
+        .right{
+            padding-right: 10rem / @rate;
+            font-size: 12rem / @rate;
+            color: #f5f5f5;
+            text-shadow: 0 0 3rem / @rate #505050;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                top: 50%;right: 0;
+                transform: translateY(-50%) rotate(45deg);
+                width: 5rem / @rate;
+                height: 5rem / @rate;
+                border: 1.5rem / @rate solid #f5f5f5;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+            }
+        }
+    }
+    .zuijinbofang{
+        margin-bottom: 14rem / @rate;
+        .zuijinbofangList{
+            height: 75rem / @rate;
+            width: 100%;
+            overflow-x: auto;
+            font-size: 0;
+            white-space: nowrap;
+            .zuijinbofangItem{
+                display: inline-block;
+                width: 180rem / @rate;
+                height: 70rem / @rate;
+                margin-right: 6rem / @rate;
+                &:last-child{margin-right: 0;}
+            }
+        }
+    }
+    .myMusic{
+        margin-bottom: 14rem / @rate;
+        .myMusicList{
+            height: 160rem / @rate;
+            width: 100%;
+            overflow-x: auto;
+            font-size: 0;
+            white-space: nowrap;
+            .myMusicItem{
+                display: inline-block;
+                width: 120rem / @rate;
+                height: 155rem / @rate;
+                margin-right: 6rem / @rate;
+                background-color: rgba(0, 0, 0, 0.1);
+                border-radius: 10rem / @rate;
+                position: relative;
+                .item_content{
+                    width: 100%;
+                    height: 70rem / @rate;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -60%);
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    img{
+                        width: 30rem / @rate;
+                        height: 30rem / @rate;
+                        object-fit: cover;
+                        object-position: center center;
+                    }
+                    span{
+                        text-align: center;
+                        font-size: 13rem / @rate;
+                        color: #fff;
+                        margin-top: 6rem / @rate;
+                    }
+                }
+                .secInfo{
+                    position: absolute;
+                    bottom: 12rem / @rate;
+                    width: 100%;
+                    height: 26rem / @rate;
+                    font-size: 11rem / @rate;
+                    color: rgb(182, 182, 182);
+                    text-align: center;
+                    line-height: 26rem / @rate;
+                }
+                &:last-child{margin-right: 0;}
+            }
+        }
+    }
+    .mySongListList, .foundListList{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .mySongListListItem, .foundListListItem{
+            width: 165rem / @rate;
+            height: 70rem / @rate;
+            margin-top: 12rem / @rate;
+            border-radius: 10rem / @rate;
+            transition: background-color 0.3s ease;
+            &:active{
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            &:nth-child(1){margin-top: 0;}
+            &:nth-child(2){margin-top: 0;}
+        }
+    }
+}

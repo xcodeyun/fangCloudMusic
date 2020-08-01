@@ -50,7 +50,11 @@ export default new Vuex.Store({
       {
         name: "カワキヲアメクカワキヲアメク"
       },
-    ]
+    ],
+    // 用户是否登录
+    hasLogin: false,
+    // 用户信息
+    userInfo: null
   },
   mutations: {
     // 左侧弹出窗口更改
@@ -66,6 +70,14 @@ export default new Vuex.Store({
     // 播放器参数修改
     setPlayer(state, data) {
       state.player = Object.assign({}, data);
+    },
+    // 设置用户是否登录
+    setUserLoginState(state, val) {
+      state.hasLogin = val;
+    },
+    // 设置用户信息
+    setUserInfo(state, val) {
+      state.userInfo = Object.assign({}, val);
     }
   },
   actions: {

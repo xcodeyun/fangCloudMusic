@@ -20,4 +20,5 @@ export default {
 </script>
 
 <style lang='less' scoped>
+@import url("./../lib/less/viewLess/yuncun.less");
 </style>

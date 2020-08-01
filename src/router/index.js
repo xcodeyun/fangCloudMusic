@@ -23,6 +23,10 @@ const routes = [
   {
     path: "/shipin",
     component: () => import("./../views/shipin.vue")
+  },
+  {
+    path: "/userInfo",
+    component: () => import("./../views/userInfo.vue")
   }
 ]
 

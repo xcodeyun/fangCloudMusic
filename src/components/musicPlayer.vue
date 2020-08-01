@@ -1,5 +1,9 @@
 <template>
   <div id="musicPlayer" ref="musicbox">
+    <div class="headerBg">
+      <img src="./../assets/bg/bg.jpg" alt v-if="!hasLogin" />
+      <img :src="userInfo ? userInfo.backgroundUrl : ''" alt v-else />
+    </div>
     <audio class="audio" ref="audio" :src="src" loop></audio>
     <div class="box">
       <div class="musicImg" ref="musicImg">
@@ -133,6 +137,12 @@ export default {
     },
     musicList: function () {
       return this.$store.state.musicList;
+    },
+    hasLogin() {
+      return this.$store.state.hasLogin;
+    },
+    userInfo() {
+      return this.$store.state.userInfo;
     },
   },
   filters: {},

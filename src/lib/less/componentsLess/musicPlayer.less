@@ -8,6 +8,8 @@
     display: flex;
     align-items: center;
     padding: 0 6rem / @rate;
+    position: relative;
+    z-index: 90;
     .musicImg{
         width: 45rem / @rate;
         height: 45rem / @rate;
@@ -135,7 +137,26 @@
     width: 0;
     height: 2rem / @rate;
     background-color: rgb(255, 223, 228);
+    z-index: 99;
 }
+.headerBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    img{
+        display: block;
+        width: 375rem / @rate;
+        height: 667rem / @rate;
+        position: absolute;
+        bottom: 0;
+        object-fit: cover;
+        filter: blur(16rem / @rate);
+    }
+}
+
 // 动画开始
 @keyframes moveT{
     0%{
