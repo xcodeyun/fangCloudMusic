@@ -1,0 +1,70 @@
+@rate: 50;
+#init{
+  position: fixed;
+  height: 100%;
+  top: 0;left: 0;bottom: 0;right: 0;
+  z-index: 9999;
+  background-color: #fff;
+  overflow: hidden;
+}
+.bg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: scale(1.2);
+  img{
+    display: block;
+    height: 667rem / @rate;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(32rem / @rate) brightness(80%);
+  }
+}
+.main{
+  height: 100%;
+  position: relative;
+  z-index: 99;
+  padding: 0 16rem / @rate;
+  .header{
+    height: 60rem / @rate;
+    display: flex;
+    align-items: center;
+    .icon{
+      width: 20rem / @rate;
+      height: 20rem / @rate;
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .text{
+      font-size: 18rem / @rate;
+      font-weight: bold;
+      color: #FFF;
+      margin-left: 13rem / @rate;
+    }
+  }
+  .box{
+    height: calc(100% - 60rem / @rate);
+    position: relative;
+  }
+  .bofangye, .geciye{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+
+// vue动画
+.taggle-enter, .taggle-leave-to{
+  opacity: 0;
+}
+.taggle-enter-active, .taggle-leave-active{
+  transition: opacity 0.3s ease;
+}

@@ -2,27 +2,28 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Axios from "axios"
-import { Swipe, SwipeItem } from 'mint-ui';
+import { Swipe, SwipeItem, Loadmore, Spinner, Navbar, TabItem, TabContainer, TabContainerItem } from 'mint-ui';
 import 'mint-ui/lib/style.css'
+import Tool from "./lib/js/toolp"
+import Axios from "axios"
 
 Vue.config.productionTip = false
 
+// axios配置
 Axios.defaults.baseURL = "http://www.xcodeyun.cn:30000"
-
-// Axios.interceptors.response.use(function (response) {
-//   // 对响应数据做点什么
-//   console.log("正常 --> ", response)
-//   return response;
-// }, function (error) {
-//   // 对响应错误做点什么
-//   return error;
-// });
-
 Vue.prototype.$axios = Axios;
+
+// 工具方法配置
+Vue.prototype.$tool = new Tool(Vue);
 
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Loadmore.name, Loadmore);
+Vue.component(Spinner.name, Spinner);
+Vue.component(Navbar.name, Navbar);
+Vue.component(TabItem.name, TabItem);
+Vue.component(TabContainer.name, TabContainer);
+Vue.component(TabContainerItem.name, TabContainerItem);
 
 new Vue({
   router,

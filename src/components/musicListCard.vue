@@ -22,13 +22,61 @@
 </template>
 
 <script>
+import { Toast } from "mint-ui";
 export default {
   data() {
     return {};
   },
   methods: {
-    playTheSong(id) {
-      console.log(id);
+    async playTheSong(id) {
+      if (id == 0)
+        return Toast({
+          message: "该项不是歌曲",
+          position: "bottom",
+          duration: 2000,
+        });
+      if (this.loading)
+        return Toast({
+          message: "加载中,请稍等...",
+          position: "bottom",
+          duration: 2000,
+        });
+      this.$store.commit("setLoading", true);
+      let player = Object.assign({}, this.$store.state.player);
+      let res = await this.$tool.getMusicUrl(id);
+      this.addSong(res);
+      this.$store.commit("setLoading", false);
+    },
+    addSong(res) {
+      let player = Object.assign({}, this.$store.state.player);
+      player.src = res[0].data[0].url;
+      player.name = res[1].songs[0].name;
+      player.singer = res[1].songs[0].ar[0].name;
+      player.img = res[1].songs[0].al.picUrl;
+      player.play = true;
+      player.index = 0;
+      this.$store.commit("setPlayer", player);
+      this.addListToLocal(res);
+    },
+    // 添加歌单歌曲到待放列表
+    async addListToLocal(res) {
+      let arr = [];
+      let singer = "";
+      for (let i = 0; i < res[1].songs[0].ar.length; i++) {
+        singer +=
+          i !== 0
+            ? "/" + res[1].songs[0].ar[i].name
+            : res[1].songs[0].ar[i].name;
+      }
+      let data = {
+        src: res[0].data[0].url,
+        name: res[1].songs[0].name,
+        singer,
+        img: res[1].songs[0].al.picUrl,
+        id: res[1].songs[0].al.id,
+      };
+      arr.push(data);
+      this.$store.commit("setMusicList", arr);
     },
   },
   created() {},
@@ -45,6 +93,9 @@ export default {
         arr.push(this.list[i]);
       }
       return result;
+    },
+    loading() {
+      return this.$store.state.loading;
     },
   },
   filters: {},

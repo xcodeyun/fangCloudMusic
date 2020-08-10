@@ -218,7 +218,8 @@ export default {
         data: { phone },
         method: "post",
       }).then((res) => {
-        if (res.response.data && res.response.data.code === 400) {
+        console.log(res);
+        if (res.data && res.data.code === 400) {
           return Toast({
             message: "该手机号验证次数过多,请明天再试",
             position: "top",

@@ -1,5 +1,5 @@
 <template>
-  <div id="songCard" @click="toInit(musicData.id)" v-if="musicData">
+  <div id="songCard" v-if="musicData">
     <div class="img">
       <img :src="musicData.picUrl" />
       <div class="playCount">
@@ -16,11 +16,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    toInit(id) {
-      console.log("跳转到歌曲 --->", id);
-    },
-  },
+  methods: {},
   created() {},
   mounted() {},
   computed: {},

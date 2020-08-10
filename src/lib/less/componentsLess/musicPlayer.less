@@ -9,7 +9,7 @@
     align-items: center;
     padding: 0 6rem / @rate;
     position: relative;
-    z-index: 90;
+    z-index: 99;
     .musicImg{
         width: 45rem / @rate;
         height: 45rem / @rate;
@@ -36,7 +36,7 @@
         justify-content: space-between;
         overflow: hidden;
         padding: 4rem / @rate 0;
-        margin: 0 6rem / @rate;
+        margin-left: 6rem / @rate;
         .title{
             position: relative;
             font-size: 14rem / @rate;
@@ -51,7 +51,7 @@
             color: #e6dcdd;
         }
         .animateT{
-            animation: moveT 12s linear infinite;
+            animation: moveT 8s linear infinite;
         }
         .animateS{
             animation: moveS 12s linear infinite;
@@ -94,8 +94,9 @@
         }
     }
     .Bpopup{
-        position: absolute;
-        bottom: 100%;
+        position: fixed;
+        z-index: 9999;
+        bottom: 55rem / @rate;
         right: 10rem / @rate;
         width: 200rem / @rate;
         height: 300rem / @rate;
@@ -106,14 +107,14 @@
             font-weight: bold;
             padding: 10rem / @rate 12rem / @rate;
             border-radius: 8rem / @rate 8rem / @rate 0 0;
-            background-color: rgb(255, 223, 228, 0.6);
+            background-color: rgb(255, 255, 255, 0.6);
         }
         .musicList{
             width: 100%;
             height: calc(100% - 36rem / @rate - 12rem / @rate);
             border-radius: 0 0 8rem / @rate 8rem / @rate;
             overflow-y: auto;
-            background-color: rgba(255, 192, 203, 0.6);
+            background-color: rgba(236, 236, 236, 0.5);
             .musicItem{
                 font-size: 14rem / @rate;
                 padding: 10rem / @rate 12rem / @rate;
@@ -160,10 +161,10 @@
 // 动画开始
 @keyframes moveT{
     0%{
-        transform: translateX(0%);
+        transform: translateX(5%);
     }
     100%{
-        transform: translateX(-290%);
+        transform: translateX(-100%);
     }
 }
 @keyframes moveS{
@@ -171,7 +172,7 @@
         transform: translateX(0%);
     }
     100%{
-        transform: translateX(-280%);
+        transform: translateX(-100%);
     }
 }
 @keyframes imgRotate{

@@ -4,18 +4,18 @@
       <img src="./../assets/bg/bg.jpg" alt v-if="!hasLogin" />
       <img :src="userInfo ? userInfo.backgroundUrl : ''" alt v-else />
     </div>
-    <div class="menu" @click="tagglePopup">
+    <!-- <div class="menu" @click="tagglePopup">
       <img src="./../assets/icon/_menu.png" />
-    </div>
+    </div>-->
     <div class="linkBtnList">
       <router-link class="linkBtnItem" tag="div" to="/wode">我的</router-link>
       <router-link class="linkBtnItem" tag="div" to="/faxian">发现</router-link>
-      <router-link class="linkBtnItem" tag="div" to="/yuncun">云村</router-link>
+      <router-link class="linkBtnItem" tag="div" to="/dongtai">动态</router-link>
       <router-link class="linkBtnItem" tag="div" to="/shipin">视频</router-link>
     </div>
-    <div class="search" @click="taggleSearch">
+    <!-- <div class="search" @click="taggleSearch">
       <img src="./../assets/icon/search.png" />
-    </div>
+    </div>-->
   </div>
 </template>
 

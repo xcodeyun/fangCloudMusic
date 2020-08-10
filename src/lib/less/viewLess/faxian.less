@@ -138,3 +138,16 @@
         }
     }
 }
+
+// vue动画类
+.gedanInfo-enter
+ {
+  transform: translateY(100%);
+}
+.gedanInfo-leave-to{
+    transform: translateY(110%);
+}
+.gedanInfo-enter-active,
+.gedanInfo-leave-active {
+  transition: transform 0.3s ease;
+}

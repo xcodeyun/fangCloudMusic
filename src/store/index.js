@@ -16,45 +16,35 @@ export default new Vuex.Store({
       name: "",
       singer: "",
       img: "",
-      playTime: 0
+      playTime: 0,
+      allTime: 0,
+      index: 0
     },
+    // 是否当前处于私人FM中
+    isFM: false,
     // 当前播放的音乐所在音乐列表
     musicList: [
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
-      {
-        name: "カワキヲアメクカワキヲアメク"
-      },
+      // {
+      //   name: "测试1",
+      //   src: require("./../assets/media/test.mp3"),
+      //   singer: "测试歌手1",
+      //   img: "",
+      //   id: 0
+      // }
     ],
     // 用户是否登录
     hasLogin: false,
     // 用户信息
-    userInfo: null
+    userInfo: null,
+    // 全局加载开关
+    loading: false,
+    // FM音乐缓存
+    FMstorage: [],
+    // 全局歌词弹窗
+    globalPopup: {
+      show: false,
+      id: 0
+    }
   },
   mutations: {
     // 左侧弹出窗口更改
@@ -78,6 +68,32 @@ export default new Vuex.Store({
     // 设置用户信息
     setUserInfo(state, val) {
       state.userInfo = Object.assign({}, val);
+    },
+    // 设置全局加载状态
+    setLoading(state, val) {
+      state.loading = val;
+    },
+    // 设置全局待放列表
+    setMusicList(state, val) {
+      state.musicList = [].concat(val);
+    },
+    // 设置播放器总时长
+    setPlayerAllTime(state, val) {
+      let newData = Object.assign({}, state.player);
+      newData.allTime = val;
+      state.player = newData;
+    },
+    // 设置是否位于FM中
+    setFM(state, val) {
+      state.isFM = val;
+    },
+    // 设置FM缓存
+    setFMstorage(state, val) {
+      state.FMstorage = [].concat(val);
+    },
+    // 设置全局歌词弹窗
+    setGlobalPopup(state, val) {
+      state.globalPopup = Object.assign(val);
     }
   },
   actions: {

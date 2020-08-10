@@ -24,6 +24,10 @@
       </div>
     </div>
     <!-- 额外内容窗口(弹窗) -->
+    <!-- 全局歌词弹窗 -->
+    <transition name="globalPopup">
+      <global-popup v-if="globalPopup.show"></global-popup>
+    </transition>
   </div>
 </template>
 
@@ -32,6 +36,7 @@ export default {
   components: {
     "music-header": () => import("./components/musicHeader"),
     "music-player": () => import("./components/musicPlayer"),
+    "global-popup": () => import("./components/global/globalPopup"),
   },
   created() {
     // 如果本地存储了用户的ID, 那么表示用户曾经已经登陆, 此时就直接根据id获取用户信息
@@ -48,9 +53,11 @@ export default {
         if (res.data && res.data.profile) {
           this.$store.commit("setUserLoginState", true);
           this.$store.commit("setUserInfo", res.data.profile);
+          console.log("用户已经登陆");
         } else {
           this.$store.commit("setUserLoginState", false);
           this.$store.commit("setUserInfo", null);
+          console.log("用户未登陆");
         }
       });
     } else {
@@ -65,6 +72,9 @@ export default {
     },
     userInfo() {
       return this.$store.state.userInfo;
+    },
+    globalPopup() {
+      return this.$store.state.globalPopup;
     },
   },
 };

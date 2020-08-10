@@ -17,8 +17,8 @@ const routes = [
     component: () => import("./../views/faxian.vue")
   },
   {
-    path: "/yuncun",
-    component: () => import("./../views/yuncun.vue")
+    path: "/dongtai",
+    component: () => import("./../views/dongtai.vue")
   },
   {
     path: "/shipin",
@@ -27,6 +27,18 @@ const routes = [
   {
     path: "/userInfo",
     component: () => import("./../views/userInfo.vue")
+  },
+  {
+    path: "/infoPage",
+    component: () => import("./../views/infoPage.vue")
+  },
+  {
+    path: "/wode/init/:handle",
+    component: () => import("./../views/init.vue")
+  },
+  {
+    path: "/lyric",
+    component: () => import("./../views/iyric.vue")
   }
 ]
 

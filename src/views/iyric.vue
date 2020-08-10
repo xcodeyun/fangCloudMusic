@@ -1,5 +1,5 @@
 <template>
-  <div id="yuncun">云村</div>
+  <div id="iyric"></div>
 </template>
 
 <script>
@@ -20,5 +20,4 @@ export default {
 </script>
 
 <style lang='less' scoped>
-@import url("./../lib/less/viewLess/yuncun.less");
 </style>

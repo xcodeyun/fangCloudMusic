@@ -7,4 +7,108 @@
     position: absolute;
     left: 0;
     top: 0;
+    padding-top: 12rem / @rate;
+    background-color: rgba(0,0,0,0.1);
+}
+// 下拉组件的样式
+.mint-loadmore-top{
+    position: relative;
+}
+.continueDrop{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.continueDrop, .loading{
+    font-size: 16rem / @rate;
+    color: #FFF;
+    text-shadow: 0 0 3rem / @rate #505050;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+// 视频列表区域样式
+.videoList{
+    li{
+        padding: 0 12rem / @rate 18rem / @rate 12rem / @rate;
+        &:last-child{margin-bottom: 0;}
+        .box{
+            width: 100%;
+            height: 200rem / @rate;
+            position: relative;
+            border-radius: 12rem / @rate;
+            overflow: hidden;
+            .img{
+                width: 100%;
+                height: 100%;
+                img{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+            .playBtn{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                img{
+                    display: block;
+                    width: 40rem / @rate;
+                    height: 40rem / @rate;
+                }
+            }
+            .time{
+                position: absolute;
+                right: 10rem / @rate;
+                bottom: 10rem / @rate;
+                font-size: 12rem / @rate;
+                text-align: right;
+                color: #FFF;
+                text-shadow: 0 0 2rem / @rate #505050;
+            }
+            .playCount{
+                position: absolute;
+                left: 10rem / @rate;
+                bottom: 10rem / @rate;
+                font-size: 12rem / @rate;
+                color: #FFF;
+                text-shadow: 0 0 2rem / @rate #505050;
+            }
+        }
+        .name{
+            font-size: 14rem / @rate;
+            color: #FFF;
+            text-shadow: 0 0 3rem / @rate #505050;
+            padding: 0 5rem / @rate;
+            margin-top: 10rem / @rate;
+            margin-bottom: 6rem / @rate;
+        }
+        .artical{
+            font-size: 11rem / @rate;
+            color: #eeeeee;
+            text-shadow: 0 0 1rem / @rate #505050;
+            padding: 0 5rem / @rate 12rem / @rate 5rem / @rate;
+            border-bottom: 1rem / @rate solid rgba(255,255,255,0.3);
+        }
+    }
+}
+.bottomLoad{
+    font-size: 16rem / @rate;
+    color: #fff;
+    text-shadow: 0 0 3rem / @rate #505050;
+    padding-bottom: 12rem / @rate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-enter, .video-leave-to{
+    opacity: 0;
+}
+.video-enter-active, .video-leave-active{
+    transition: opacity 0.3s ease;
 }

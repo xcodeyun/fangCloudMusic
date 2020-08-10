@@ -1,5 +1,5 @@
 <template>
-  <div id="miniCard" @click="taggleSong(miniData.id || miniData.song.al.id)">
+  <div id="miniCard">
     <div class="miniCard_img">
       <img :src="miniData.coverImgUrl || miniData.song.al.picUrl" />
     </div>
@@ -20,11 +20,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    taggleSong(id) {
-      console.log(id);
-    },
-  },
+  methods: {},
   created() {},
   mounted() {},
   computed: {},
@@ -33,7 +29,7 @@ export default {
   watch: {
     $route() {},
   },
-  props: ["miniData"],
+  props: ["miniData", "type"],
 };
 </script>
 

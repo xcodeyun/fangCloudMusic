@@ -62,7 +62,7 @@ html,body{
         object-fit: cover;
         object-position: center center;
         opacity: 0.9;
-        filter: blur(2px);
+        filter: blur(6px) brightness(85%);
     }
 }
 #mask{
@@ -81,6 +81,17 @@ html,body{
 }
 .routerTRS-enter-active, .routerTRS-leave-active{
     transition: opacity 0.2s ease;
+}
+
+.globalPopup-enter, .globalPopup-leave-to{
+    position: fixed;
+    bottom: 0;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.globalPopup-enter-active, .globalPopup-leave-active{
+    position: fixed;
+    transition: transform 0.4s ease, opacity 0.2s ease;
 }
 
 // 路由高亮类
