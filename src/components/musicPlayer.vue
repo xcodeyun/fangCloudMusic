@@ -21,9 +21,9 @@
       <div class="playBtn stopBtn" @click.stop="playAndStop" v-else>
         <img src="./../assets/icon/stop.png" />
       </div>
-      <div class="playList" @click.stop="showBpopupFlog = !showBpopupFlog">
+      <!-- <div class="playList" @click.stop="showBpopupFlog = !showBpopupFlog">
         <img src="./../assets/icon/menuopen.png" alt />
-      </div>
+      </div>-->
       <!-- 播放列表 -->
       <transition name="Bpopup">
         <div class="Bpopup" v-if="showBpopupFlog">

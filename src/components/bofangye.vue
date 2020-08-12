@@ -113,7 +113,8 @@ export default {
       this.$store.commit("setPlayer", player);
     },
     // 播歌
-    changePlayer() {
+    changePlayer(flog) {
+      if (!flog) return;
       this.playSing(this.item.id, this.index);
     },
     // 播放歌曲
@@ -156,7 +157,7 @@ export default {
     },
   },
   created() {
-    this.changePlayer();
+    if (this.item) this.changePlayer();
   },
   mounted() {},
   computed: {
@@ -209,7 +210,7 @@ export default {
       }
     },
     index() {
-      this.changePlayer();
+      this.changePlayer(true);
     },
   },
   props: ["type", "item", "index", "taggle"],
