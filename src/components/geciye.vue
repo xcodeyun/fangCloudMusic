@@ -89,16 +89,17 @@ export default {
     // 自动滚动歌词
     autoGeciMove() {
       if (this.time && this.geci) {
+        if (this.row === this.geci.length - 1) return;
         let time = this.time[this.row];
         if (isNaN(time)) time = 0;
         if (this.playTime > time - this.adjustment && this.$refs.geciList) {
           if (this.row !== this.geci.length) this.row++;
           if (this.row >= this.geci.length) this.row = 0;
-          let h = (this.row - 1) * 50;
+          let h = this.row - 1;
           h = h < 0 ? 0 : h;
           this.$refs.geciList.setAttribute(
             "style",
-            `transform:translateY(-${h}px);`
+            `transform:translateY(-${h}rem);`
           );
         }
       }
@@ -150,7 +151,7 @@ export default {
 .geciList {
   height: auto;
   position: absolute;
-  top: 280rem / @rate;
+  top: calc(50% - 25rem / @rate);
   width: 100%;
   transition: transform 0.4s ease;
   .geciItem {

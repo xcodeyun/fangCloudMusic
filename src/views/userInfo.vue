@@ -286,6 +286,7 @@ export default {
             localStorage.setItem("cloudMusicUserId", res.data.account.id);
             this.$store.commit("setUserLoginState", true);
             this.$router.push("/wode");
+            return window.location.reload();
           } else {
             localStorage.removeItem("cloudMusicUserCookie");
             localStorage.removeItem("cloudMusicUserId");
